@@ -1,0 +1,45 @@
+.background{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  z-index:-1;
+  background:radial-gradient(circle at top,var(--surface),var(--bg) 60%);
+}
+
+.blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:.28;
+}
+
+.blob1{
+  width:350px;
+  height:350px;
+  background:var(--primary);
+  top:-100px;
+  left:-80px;
+  animation:float1 18s infinite ease-in-out;
+}
+
+.blob2{
+  width:280px;
+  height:280px;
+  background:var(--accent);
+  bottom:-60px;
+  right:5%;
+  animation:float2 22s infinite ease-in-out;
+}
+
+.blob3{
+  width:240px;
+  height:240px;
+  background:var(--primary-dark);
+  top:40%;
+  left:45%;
+  animation:float3 26s infinite ease-in-out;
+}
+
+@keyframes float1{50%{transform:translate(80px,60px)}}
+@keyframes float2{50%{transform:translate(-70px,-50px)}}
+@keyframes float3{50%{transform:translate(50px,-70px)}}

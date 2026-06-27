@@ -1,0 +1,63 @@
+:root{
+  /* =========================
+     MAIN THEME CONTROL
+     Change colors here only
+  ========================= */
+  --bg:#06141B;
+  --surface:#0F2D38;
+  --surface-2:#122f3a;
+
+  --primary:#088395;
+  --primary-dark:#09637E;
+  --secondary:#09637E;
+  --accent:#6DE1F3;
+  --orange:#ff8a00;
+  --orange-light:#ffb347;
+
+  --text:#C8D8DD;
+  --text-heading:#ffffff;
+  --heading:#ffffff;
+  --text-muted:rgba(200,216,221,.72);
+
+  --border:rgba(255,255,255,.10);
+  --glass:rgba(255,255,255,.06);
+  --glass-strong:rgba(255,255,255,.10);
+
+  --btn-bg:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  --btn-hover:linear-gradient(135deg,var(--accent),var(--primary));
+  --btn-text:#ffffff;
+
+  --shadow-sm:0 5px 15px rgba(0,0,0,.20);
+  --shadow-md:0 10px 30px rgba(8,131,149,.25);
+  --shadow-lg:0 20px 50px rgba(0,0,0,.40);
+
+  --fast:.2s;
+  --normal:.35s;
+  --slow:.8s;
+  --ease:cubic-bezier(.4,0,.2,1);
+
+  --font-main:'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --fs-xs:12px;
+  --fs-sm:14px;
+  --fs-md:16px;
+  --fs-lg:20px;
+  --fs-xl:28px;
+  --fs-2xl:36px;
+
+  --radius-sm:6px;
+  --radius-md:12px;
+  --radius-lg:20px;
+  --radius-full:999px;
+
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --space-7:60px;
+  --space-8:120px;
+
+  --container:1200px;
+}
