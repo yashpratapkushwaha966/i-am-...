@@ -1,10 +1,13 @@
 import "../../../css/projects.css";
 import ProjectCard from "./ProjectCard";
 import projects from "./projectsData";
+import useScrollReveal from "../../../hooks/useScrollReveal";
 
 const Projects = () => {
+  const sectionRef = useScrollReveal(".section-tag, .projects h2, .project-card");
+
   return (
-    <section className="projects" id="projects">
+    <section className="projects" id="projects" ref={sectionRef}>
       <div className="container">
 
         <span className="section-tag">

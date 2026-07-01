@@ -11,6 +11,23 @@
   border-radius:50%;
   filter:blur(120px);
   opacity:.28;
+  will-change:transform;
+  transform:translateZ(0);
+}
+
+/* Heavy blur is very expensive on mobile GPUs and was the main cause
+   of scroll jank — reduce it drastically on smaller screens */
+@media(max-width:768px){
+  .blob{
+    filter:blur(50px);
+    opacity:.22;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .blob{
+    animation:none !important;
+  }
 }
 
 .blob1{
