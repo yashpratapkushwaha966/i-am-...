@@ -1,7 +1,6 @@
 
 import AboutCard from "./AboutCard";
 import "../../../css/about.css";
-import useScrollReveal from "../../../hooks/useScrollReveal";
 
 const cards = [
   {
@@ -19,10 +18,8 @@ const cards = [
 ];
 
 const About = () => {
-  const sectionRef = useScrollReveal(".about-left > *, .about-card");
-
   return (
-    <section className="about" id="about" ref={sectionRef}>
+    <section className="about" id="about">
       <div className="container about-container">
 
         <div className="about-left">

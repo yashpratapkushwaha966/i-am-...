@@ -10,21 +10,6 @@
     border-radius:50%;
     filter:blur(120px);
     opacity:.35;
-    will-change:transform;
-    transform:translateZ(0);
-}
-
-@media(max-width:768px){
-    .glow{
-        filter:blur(45px);
-        opacity:.28;
-    }
-}
-
-@media(prefers-reduced-motion:reduce){
-    .glow{
-        animation:none !important;
-    }
 }
 
 .glow-1{

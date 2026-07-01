@@ -1,15 +1,9 @@
 import "../../../css/experience.css";
 import experience from "./experienceData";
-import useScrollReveal from "../../../hooks/useScrollReveal";
 
 const Experience = () => {
-  const sectionRef = useScrollReveal(
-    ".section-tag, .experience h2, .timeline-item",
-    { stagger: 0.18 }
-  );
-
   return (
-    <section className="experience" id="experience" ref={sectionRef}>
+    <section className="experience" id="experience">
       <div className="container">
 
         <span className="section-tag">
