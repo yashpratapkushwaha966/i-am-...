@@ -73,13 +73,13 @@ const Contact = () => {
 
             <div className="contact-links">
 
-              <a href="mailto:your@email.com">
+              <a href="mailto:yashkushwaha485005@gmail.com">
                 <FaEnvelope />
-                your@email.com
+                yashkushwaha485005@gmail.com
               </a>
 
               <a
-                href="https://github.com/"
+                href="https://github.com/yashpratapkushwaha966"
                 target="_blank"
                 rel="noreferrer"
               >

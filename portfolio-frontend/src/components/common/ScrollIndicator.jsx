@@ -8,10 +8,11 @@ const ScrollIndicator = () => {
       transition={{
         duration: 1.8,
         repeat: Infinity,
+        repeatType: "reverse"
       }}
-    >
+    ><a href="#contact">
       ↓
-    </motion.div>
+    </a></motion.div>
   );
 };
 

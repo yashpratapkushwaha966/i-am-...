@@ -43,12 +43,12 @@ const HeroContent = () => {
       </p>
 
       <div className="hero-buttons">
-        <Button title="Hire Me" />
-        <Button title="Download Resume" />
+        <Button title="Hire Me" href="#contact" />
+        <Button title="Download Resume" href="/resume.pdf"  />
         <div className="hero-stats">
 
   <div>
-    <h3>10+</h3>
+    <h3>9+</h3>
     <span>Projects</span>
   </div>
 

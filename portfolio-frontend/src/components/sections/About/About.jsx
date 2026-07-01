@@ -1,15 +1,16 @@
 
 import AboutCard from "./AboutCard";
 import "../../../css/about.css";
+import useScrollReveal from "../../../hooks/useScrollReveal";
 
 const cards = [
   {
     title: "Projects",
-    value: "10+",
+    value: "9+",
   },
   {
     title: "Technologies",
-    value: "15+",
+    value: "14+",
   },
   {
     title: "Learning",
@@ -18,21 +19,21 @@ const cards = [
 ];
 
 const About = () => {
+  const sectionRef = useScrollReveal(".about-left > *, .about-card");
+
   return (
-    <section className="about" id="about">
+    <section className="about" id="about" ref={sectionRef}>
       <div className="container about-container">
 
         <div className="about-left">
           <span className="section-tag">About Me</span>
 
           <h2>
-            Passionate MERN Developer
+            Passionate Full Stack MERN Developer
           </h2>
 
           <p>
-            I'm Yash, a Full Stack MERN Developer who enjoys building
-            responsive, modern and user-friendly web applications.
-            I love creating clean UI, smooth animations and scalable backend systems.
+            I'm Yash, a Full Stack MERN Developer focused on creating fast, scalable, and user-friendly web applications. I enjoy turning ideas into modern digital experiences with clean code, responsive design, and seamless user interactions.
           </p>
         </div>
 

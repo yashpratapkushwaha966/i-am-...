@@ -1,39 +1,60 @@
 import "../../css/footer.css";
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaXTwitter,
+  FaEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <motion.footer
+      className="footer"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
+    >
       <div className="footer-container">
-
-        {/* Logo / Name */}
         <div className="footer-logo">
-          Yash<span>.</span>
+          Yash Kushwaha<span>...</span>
         </div>
 
-        {/* Links */}
-        <div className="footer-links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        {/* Social */}
         <div className="footer-social">
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">Twitter</a>
+          <motion.a href="https://github.com/yashpratapkushwaha966" target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.1 }}>
+            <FaGithub />
+          </motion.a>
+
+          <motion.a href="#" whileHover={{ y: -6, scale: 1.1 }}>
+            <FaLinkedin />
+          </motion.a>
+
+          <motion.a href="https://www.instagram.com/yash_pratap_kushwaha?igsh=MW5pM3F1cGtsZjdybw==" target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.1 }}>
+            <FaInstagram />
+          </motion.a>
+
+          <motion.a href="https://x.com/YashK37303" target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.1 }}>
+            <FaXTwitter />
+          </motion.a>
+
+          <motion.a href="mailto:yashkushwaha485005@gmail.com" 
+          whileHover={{ y: -6, scale: 1.1 }}>
+            <FaEnvelope />
+            </motion.a>
+
+          <motion.a href="#" target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.1 }}>
+            <FaWhatsapp />
+          </motion.a>
         </div>
 
-        {/* Bottom Text */}
-        <div className="footer-bottom">
+        <p className="footer-bottom">
           © {new Date().getFullYear()} Yash. All Rights Reserved.
-        </div>
-
+        </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

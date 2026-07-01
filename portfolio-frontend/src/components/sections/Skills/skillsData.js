@@ -13,7 +13,7 @@ const skills = [
   },
   {
     title: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Postman"],
+    items: ["Git", "GitHub", "VS Code", "Postman" ],
   },
 ];
 
