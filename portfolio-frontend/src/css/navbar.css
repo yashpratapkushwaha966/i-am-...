@@ -1,281 +1,70 @@
-.navbar{
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%) translateZ(0);
-    width:min(95%,1250px);
-
-    z-index:1000;
-
-    border:1px solid rgba(255,255,255,.08);
-
-
-    background:rgba(6,20,27,.7);
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    border:1px solid rgba(8,131,149,.25);
-
-
-    transition:.35s;
-    will-change:transform;
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  max-width: 1250px;
+  z-index: 1000;
+  border: 1px solid rgba(8,131,149,.25);
+  background: rgba(6,20,27,.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: .35s;
 }
 
-.navbar-scroll{
-
-    top:10px;
-
-    background:rgba(6,20,27,.88);
-
+.nav-container {
+  width: 100%;
+  height: 75px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-@media(max-width:768px){
-    .navbar{
-        backdrop-filter:blur(8px);
-        -webkit-backdrop-filter:blur(8px);
-    }
+.logo {
+  white-space: nowrap;
 }
 
-.nav-container{
-
-    height:75px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-.logo{
-
-    color:var(--text-heading);
-
-    font-size:30px;
-
-    font-weight:700;
-
-}
-
-.logo span{
-
-    color:var(--primary);
-
-}
-
-.desktop-menu{
-
-display:flex;
-
-gap:35px;
-
-}
-
-.desktop-menu a{
-
-position:relative;
-
-font-size:16px;
-
-font-weight:500;
-
-color:var(--text-heading);
-
-transition:.3s;
-
-}
-
-.desktop-menu a:hover{
-
-color:var(--accent);
-
-}
-
-.desktop-menu a::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:-8px;
-
-width:0;
-
-height:2px;
-
-background:var(--accent);
-
-transition:.35s;
-
-}
-
-.desktop-menu a:hover::after{
-
-width:100%;
-
-}
-
-.hire-btn{
-
-padding:12px 28px;
-
-border:none;
-
-cursor:pointer;
-
-border-radius:50px;
-
-background:linear-gradient(90deg,#088395,#6DE1F3);
-
-font-weight:600;
-
-transition:.35s;
-
-}
-
-.hire-btn:hover{
-
-transform:translateY(-3px);
-
-}
-
-.hamburger{
-
-display:none;
-
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:6px;
-
-width:32px;
-height:32px;
-
-cursor:pointer;
-background:none;
-border:none;
-padding:0;
-
-}
-
-.hamburger span{
-
-display:block;
-width:26px;
-height:2px;
-border-radius:2px;
-background:var(--text-heading);
-
-transition:transform .35s var(--ease,cubic-bezier(.4,0,.2,1)), opacity .25s ease;
-
-}
-
-.hamburger.active span:nth-child(1){
-  transform:translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-  transform:scaleX(0);
-}
-
-.hamburger.active span:nth-child(3){
-  transform:translateY(-8px) rotate(-45deg);
-}
-
-.mobile-menu{
-
-display:none;
-
-}
-
-@media(max-width:900px){
-
-.desktop-menu,
-
-.hire-btn{
-
-display:none;
-
-}
-
-.hamburger{
-
-display:flex;
-
-}
-
-.mobile-menu{
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-gap:22px;
-
-position:fixed;
-inset:0;
-padding:30px;
-
-background:rgba(6,20,27,.98);
-
-z-index:999;
-
-}
-
-.mobile-menu a{
-
-position:relative;
-
-color:var(--text-heading);
-
-font-size:26px;
-font-weight:600;
-
-width:fit-content;
-
-}
-
-.mobile-menu a::after{
-
-content:"";
-position:absolute;
-left:0;
-bottom:-4px;
-width:0;
-height:2px;
-background:var(--accent);
-transition:width .3s ease;
-
-}
-
-.mobile-menu a:active::after,
-.mobile-menu a:hover::after{
-  width:100%;
-}
-
-.mobile-btn{
-
-display:block;
-
-width:fit-content;
-
-margin-top:10px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.mobile-menu a{
-  font-size:22px;
-}
-
+@media (max-width: 900px) {
+  .navbar {
+    top: 12px;
+    width: calc(100% - 20px);
+  }
+
+  .nav-container {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .desktop-menu,
+  .nav-container > .hire-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(6,20,27,.98);
+    z-index: 999;
+  }
 }
