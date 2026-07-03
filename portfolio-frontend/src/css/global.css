@@ -14,7 +14,7 @@ html{
 
 body{
   min-height:100vh;
-  background:var(--bg);
+  background:var(--ink);
   color:var(--text);
   font-family:var(--font-main);
   line-height:1.6;
@@ -24,8 +24,10 @@ body{
 
 h1,h2,h3{
   color:var(--text-heading);
-  font-weight:700;
-  line-height:1.15;
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-0.01em;
 }
 
 p{
@@ -56,17 +58,100 @@ section{
   margin:0 auto;
 }
 
+/* Eyebrow / handwritten margin-note tag used above every section heading */
 .section-tag{
-  display:inline-block;
-  color:var(--accent);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--gold);
+  font-family:var(--font-hand);
   font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:12px;
+  font-size:1.45rem;
+  letter-spacing:.3px;
+  margin-bottom:10px;
+  transform:rotate(-2deg);
+}
+
+.section-tag::before{
+  content:"";
+  width:26px;
+  height:1px;
+  background:var(--gold);
+  display:inline-block;
+}
+
+/* ---------------------------------
+   Paper-grain overlay (signature texture)
+   Extremely subtle — never a full literal scrapbook
+--------------------------------- */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9998;
+  pointer-events:none;
+  opacity:.05;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------
+   "Index card" — the recurring paper-panel unit
+   used by about / skills / projects / contact cards
+--------------------------------- */
+.card-paper{
+  position:relative;
+  background:var(--paper);
+  color:var(--ink-text);
+  border-radius:2px;
+  box-shadow:var(--shadow-md);
+}
+
+.card-paper::before{
+  /* torn top edge */
+  content:"";
+  position:absolute;
+  top:-1px;
+  left:0;
+  right:0;
+  height:8px;
+  background:
+    linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0/14px 14px repeat-x,
+    linear-gradient(-135deg, var(--paper) 50%, transparent 50%) 0 0/14px 14px repeat-x;
+  background-position:0 0, 7px 0;
+  transform:translateY(-1px);
+}
+
+/* Small gold stamp / folio mark reused across cards */
+.stamp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.08em;
+  color:var(--gold);
+  border:1px solid var(--gold-soft);
+  border-radius:var(--radius-full);
+  padding:5px 12px;
+  background:var(--gold-soft);
+  text-transform:uppercase;
 }
 
 ::selection{
-  background:var(--primary);
-  color:var(--text-heading);
+  background:var(--gold);
+  color:#151109;
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+::-webkit-scrollbar-track{
+  background:var(--ink);
+}
+::-webkit-scrollbar-thumb{
+  background:var(--border-strong);
+  border-radius:10px;
 }
 
 @media(max-width:768px){
@@ -76,5 +161,18 @@ section{
 
   .container{
     width:min(92%,var(--container));
+  }
+
+  .section-tag{
+    font-size:1.25rem;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
   }
 }

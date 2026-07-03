@@ -6,13 +6,11 @@ const HeroContent = () => {
   return (
     <motion.div
       className="hero-left"
-      initial={{ opacity: 0, x: -80 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9 }}
     >
-      <span className="hero-tag">
-        👋 Hello, I'm
-      </span>
+      <span className="hero-tag">Hi, I am</span>
 
       <h1>
         Yash Pratap
@@ -21,48 +19,46 @@ const HeroContent = () => {
       </h1>
 
       <h2 className="typing-text">
-  <Typewriter
-    words={[
-      "Full Stack MERN Developer",
-      "React.js Developer",
-      "Node.js Backend Developer",
-      "UI Animation Enthusiast"
-    ]}
-    loop={0}
-    cursor
-    cursorStyle="|"
-    typeSpeed={70}
-    deleteSpeed={40}
-    delaySpeed={1800}
-  />
-</h2>
+        <Typewriter
+          words={[
+            "Full Stack MERN Developer",
+            "React.js Developer",
+            "Node.js Backend Developer",
+            "UI Animation Enthusiast",
+          ]}
+          loop={0}
+          cursor
+          cursorStyle="_"
+          typeSpeed={70}
+          deleteSpeed={40}
+          delaySpeed={1800}
+        />
+      </h2>
 
       <p>
         I build fast, modern and responsive web applications using
-        React, Node.js, Express.js and MongoDB.
+        React, Node.js, Express.js and MongoDB — treating every project
+        like a page worth getting right.
       </p>
 
       <div className="hero-buttons">
-        <Button title="Hire Me" href="#contact" />
-        <Button title="Download Resume" href="/resume.pdf"  />
-        <div className="hero-stats">
+        <Button title="Contact Me" href="#contact" variant="filled" />
+        <Button title="Download Resume" href="/resume.pdf" />
+      </div>
 
-  <div>
-    <h3>9+</h3>
-    <span>Projects</span>
-  </div>
-
-  <div>
-    <h3>1+</h3>
-    <span>Years Learning</span>
-  </div>
-
-  <div>
-    <h3>100%</h3>
-    <span>Passion</span>
-  </div>
-
-</div>
+      <div className="hero-stats">
+        <div>
+          <h3>9+</h3>
+          <span>Projects</span>
+        </div>
+        <div>
+          <h3>1+</h3>
+          <span>Years Learning</span>
+        </div>
+        <div>
+          <h3>100%</h3>
+          <span>Passion</span>
+        </div>
       </div>
     </motion.div>
   );

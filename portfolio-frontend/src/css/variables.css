@@ -1,42 +1,69 @@
 :root{
   /* =========================
-     MAIN THEME CONTROL
-     Change colors here only
+     FIELD NOTES — design tokens
+     Dark ink canvas + cream paper cards + gold stamp accent
   ========================= */
-  --bg:#06141B;
-  --surface:#0F2D38;
-  --surface-2:#122f3a;
 
-  --primary:#088395;
-  --primary-dark:#09637E;
-  --secondary:#09637E;
-  --accent:#6DE1F3;
-  --orange:#FF4081;
-  --orange-light:#FFDE42;
+  /* -- Canvas (dark) -- */
+  --ink:#12100C;
+  --ink-2:#1A1712;
+  --ink-soft:#221E17;
 
-  --text:#FFF6F6;
-  --text-heading:#ffffff;
-  --heading:#ffffff;
-  --text-muted:rgba(200,216,221,.72);
+  /* -- Paper (cream cards) -- */
+  --paper:#F1E9D8;
+  --paper-dim:#E6DBC2;
+  --paper-line:rgba(18,16,12,.10);
 
-  --border:rgba(255,255,255,.10);
-  --glass:rgba(255,255,255,.06);
-  --glass-strong:rgba(255,255,255,.10);
+  /* -- Ink-on-cream text -- */
+  --ink-text:#1E1A12;
+  --ink-text-muted:rgba(30,26,18,.62);
 
-  --btn-bg:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  --btn-hover:linear-gradient(135deg,var(--accent),var(--primary));
-  --btn-text:#ffffff;
+  /* -- Cream-on-ink text -- */
+  --text:#EFE7D6;
+  --text-heading:#F7F1E3;
+  --text-muted:rgba(239,231,214,.60);
 
-  --shadow-sm:0 5px 15px rgba(0,0,0,.20);
-  --shadow-md:0 10px 30px rgba(8,131,149,.25);
-  --shadow-lg:0 20px 50px rgba(0,0,0,.40);
+  /* -- Accents -- */
+  --gold:#C4963F;
+  --gold-soft:rgba(196,150,63,.18);
+  --rust:#B24B2C;
+  --rust-soft:rgba(178,75,44,.18);
+
+  --border:rgba(239,231,214,.12);
+  --border-strong:rgba(239,231,214,.22);
+
+  /* legacy aliases (kept so nothing silently breaks) */
+  --bg:var(--ink);
+  --surface:var(--ink-2);
+  --surface-2:var(--ink-soft);
+  --primary:var(--gold);
+  --primary-dark:#9C7530;
+  --secondary:var(--rust);
+  --accent:var(--gold);
+  --orange:var(--rust);
+  --orange-light:var(--gold);
+  --heading:var(--text-heading);
+  --glass:rgba(239,231,214,.05);
+  --glass-strong:rgba(239,231,214,.09);
+
+  --btn-bg:var(--gold);
+  --btn-hover:var(--rust);
+  --btn-text:#151109;
+
+  --shadow-sm:0 4px 14px rgba(0,0,0,.30);
+  --shadow-md:0 14px 34px rgba(0,0,0,.38);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.48);
 
   --fast:.2s;
   --normal:.35s;
   --slow:.8s;
   --ease:cubic-bezier(.4,0,.2,1);
 
-  --font-main:'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* -- Type -- */
+  --font-display:'Fraunces', 'Georgia', serif;
+  --font-hand:'Caveat', cursive;
+  --font-main:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
 
   --fs-xs:12px;
   --fs-sm:14px;
@@ -45,9 +72,9 @@
   --fs-xl:28px;
   --fs-2xl:36px;
 
-  --radius-sm:6px;
-  --radius-md:12px;
-  --radius-lg:20px;
+  --radius-sm:4px;
+  --radius-md:8px;
+  --radius-lg:14px;
   --radius-full:999px;
 
   --space-1:4px;

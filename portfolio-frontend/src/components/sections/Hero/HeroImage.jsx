@@ -1,14 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-} from "react-icons/fa";
-
-import {
-  SiExpress,
-  SiMongodb,
-} from "react-icons/si";
+import { FaReact, FaNodeJs, FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 import profile from "../../../assets/images/profile.jpg";
 
@@ -16,58 +7,46 @@ const HeroImage = () => {
   return (
     <motion.div
       className="hero-right"
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 1.06 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="hero-image-circle">
+      <img src={profile} alt="Yash Pratap Kushwaha" className="profile-image" />
 
-        <img
-          src={profile}
-          alt="Yash"
-          className="profile-image"
-        />
+      <motion.div
+        className="tech react"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <FaReact />
+      </motion.div>
 
-        <motion.div
-          className="tech react"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
+      <motion.div
+        className="tech node"
+        animate={{ y: [0, 12, 0] }}
+        transition={{ duration: 4, repeat: Infinity }}
+      >
+        <FaNodeJs />
+      </motion.div>
+
+      <div className="hero-social">
+        <a
+          href="mailto:yashkushwaha485005@gmail.com"
+          aria-label="Email"
         >
-          <FaReact />
-        </motion.div>
-
-        <motion.div
-          className="tech node"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
+          <FaEnvelope />
+        </a>
+        <a
+          href="https://github.com/yashpratapkushwaha966"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
         >
-          <FaNodeJs />
-        </motion.div>
-
-        <motion.div
-          className="tech mongo"
-          animate={{ y: [0, -12, 0] }}
-          transition={{ duration: 3.5, repeat: Infinity }}
-        >
-          <SiMongodb />
-        </motion.div>
-
-        <motion.div
-          className="tech express"
-          animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 4.5, repeat: Infinity }}
-        >
-          <SiExpress />
-        </motion.div>
-
-        <motion.div
-          className="tech git"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
-        >
-          <FaGitAlt />
-        </motion.div>
-
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <FaLinkedin />
+        </a>
       </div>
     </motion.div>
   );

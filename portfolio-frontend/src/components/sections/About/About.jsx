@@ -1,25 +1,16 @@
-
 import AboutCard from "./AboutCard";
 import "../../../css/about.css";
 import useScrollReveal from "../../../hooks/useScrollReveal";
 
-const cards = [
-  {
-    title: "Projects",
-    value: "9+",
-  },
-  {
-    title: "Technologies",
-    value: "14+",
-  },
-  {
-    title: "Learning",
-    value: "Daily",
-  },
+const rows = [
+  { title: "Projects shipped", value: "9+" },
+  { title: "Technologies", value: "14+" },
+  { title: "Learning pace", value: "Daily" },
+  { title: "Based in", value: "Bhopal, IN" },
 ];
 
 const About = () => {
-  const sectionRef = useScrollReveal(".about-left > *, .about-card");
+  const sectionRef = useScrollReveal(".about-left > *, .about-row");
 
   return (
     <section className="about" id="about" ref={sectionRef}>
@@ -38,11 +29,11 @@ const About = () => {
         </div>
 
         <div className="about-right">
-          {cards.map((card) => (
+          {rows.map((row) => (
             <AboutCard
-              key={card.title}
-              title={card.title}
-              value={card.value}
+              key={row.title}
+              title={row.title}
+              value={row.value}
             />
           ))}
         </div>

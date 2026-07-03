@@ -1,13 +1,11 @@
 import "../../css/button.css";
 
-const Button = ({ title, href, download }) => {
+const Button = ({ title, href, download, variant }) => {
+  const cls = `primary-btn${variant === "filled" ? " filled" : ""}`;
+
   if (href) {
     return (
-      <a
-        href={href}
-        download={download}
-        className="primary-btn"
-      >
+      <a href={href} download={download} className={cls}>
         <span>{title}</span>
         <span className="arrow">→</span>
       </a>
@@ -15,7 +13,7 @@ const Button = ({ title, href, download }) => {
   }
 
   return (
-    <button className="primary-btn">
+    <button className={cls}>
       <span>{title}</span>
       <span className="arrow">→</span>
     </button>

@@ -1,58 +1,54 @@
 .hero-bg{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-    z-index:-1;
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  z-index:-1;
 }
 
 .glow{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:.35;
-    will-change:transform;
-    transform:translateZ(0);
+  position:absolute;
+  border-radius:50%;
+  filter:blur(130px);
+  opacity:.18;
+  will-change:transform;
+  transform:translateZ(0);
 }
 
 @media(max-width:768px){
-    .glow{
-        filter:blur(45px);
-        opacity:.28;
-    }
+  .glow{
+    filter:blur(50px);
+    opacity:.15;
+  }
 }
 
 @media(prefers-reduced-motion:reduce){
-    .glow{
-        animation:none !important;
-    }
+  .glow{
+    animation:none !important;
+  }
 }
 
 .glow-1{
-    width:350px;
-    height:350px;
-    background:var(--orange);
-    top:-100px;
-    left:-80px;
-    animation:move1 10s infinite ease-in-out;
+  width:350px;
+  height:350px;
+  background:var(--gold);
+  top:-100px;
+  left:-80px;
+  animation:move1 12s infinite ease-in-out;
 }
 
 .glow-2{
-    width:300px;
-    height:300px;
-    background:var(--orange-light);
-    right:-100px;
-    bottom:0;
-    animation:move2 12s infinite ease-in-out;
+  width:300px;
+  height:300px;
+  background:var(--rust);
+  right:-100px;
+  bottom:0;
+  animation:move2 14s infinite ease-in-out;
 }
 
 @keyframes move1{
-    50%{
-        transform:translate(70px,40px);
-    }
+  50%{ transform:translate(70px,40px); }
 }
 
 @keyframes move2{
-    50%{
-        transform:translate(-70px,-40px);
-    }
+  50%{ transform:translate(-70px,-40px); }
 }

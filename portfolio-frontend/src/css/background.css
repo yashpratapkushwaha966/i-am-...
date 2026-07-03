@@ -1,62 +1,106 @@
 .background{
-  position:fixed;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(196,150,63,.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 20%, rgba(178,75,44,.08), transparent 55%),
+    var(--ink);
+}
+
+/* faint ruled-notebook lines, barely visible, drifting the whole page feel
+   toward "logbook" without being literal */
+.background::before{
+  content:"";
+  position:absolute;
   inset:0;
-  overflow:hidden;
+  background-image:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 37px,
+    rgba(239,231,214,.028) 38px
+  );
+  z-index:-2;
+}
+
+/* left margin rule, like a notebook page */
+.background::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:clamp(24px,6vw,90px);
+  width:1px;
+  background:rgba(196,150,63,.14);
   z-index:-1;
-  background:radial-gradient(circle at top,var(--surface),var(--bg) 60%);
+}
+
+.background-video{
+  display:none;
 }
 
 .blob{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.28;
-  will-change:transform;
-  transform:translateZ(0);
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: .16;
+  will-change: transform;
+  transform: translateZ(0);
+  z-index: -2;
 }
 
-/* Heavy blur is very expensive on mobile GPUs and was the main cause
-   of scroll jank — reduce it drastically on smaller screens */
 @media(max-width:768px){
   .blob{
-    filter:blur(50px);
-    opacity:.22;
+    filter: blur(60px);
+    opacity: .14;
+  }
+  .background::after{
+    display:none;
   }
 }
 
 @media(prefers-reduced-motion:reduce){
   .blob{
-    animation:none !important;
+    animation: none !important;
   }
 }
 
 .blob1{
-  width:350px;
-  height:350px;
-  background:var(--primary);
-  top:-100px;
-  left:-80px;
-  animation:float1 18s infinite ease-in-out;
+  width:380px;
+  height:380px;
+  background:var(--gold);
+  top:-120px;
+  left:-100px;
+  animation:float1 20s infinite ease-in-out;
 }
 
 .blob2{
-  width:280px;
-  height:280px;
-  background:var(--accent);
-  bottom:-60px;
+  width:320px;
+  height:320px;
+  background:var(--rust);
+  bottom:-80px;
   right:5%;
-  animation:float2 22s infinite ease-in-out;
+  animation:float2 24s infinite ease-in-out;
 }
 
 .blob3{
-  width:240px;
-  height:240px;
-  background:var(--primary-dark);
+  width:260px;
+  height:260px;
+  background:#7C5A22;
   top:40%;
   left:45%;
-  animation:float3 26s infinite ease-in-out;
+  animation:float3 28s infinite ease-in-out;
 }
 
-@keyframes float1{50%{transform:translate(80px,60px)}}
-@keyframes float2{50%{transform:translate(-70px,-50px)}}
-@keyframes float3{50%{transform:translate(50px,-70px)}}
+@keyframes float1{
+  50%{ transform: translate(80px,60px); }
+}
+
+@keyframes float2{
+  50%{ transform: translate(-70px,-50px); }
+}
+
+@keyframes float3{
+  50%{ transform: translate(50px,-70px); }
+}

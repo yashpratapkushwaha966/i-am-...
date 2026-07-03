@@ -1,31 +1,35 @@
 .primary-btn,
 .btn{
+  position:relative;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:10px;
-  min-height:48px;
-  padding:12px 26px;
-  border:none;
-  border-radius:var(--radius-full);
-  background:var(--btn-bg);
-  color:var(--btn-text);
-  font-weight:700;
+  min-height:50px;
+  padding:13px 28px;
+  border:1.5px solid var(--gold);
+  border-radius:var(--radius-sm);
+  background:transparent;
+  color:var(--gold);
+  font-family:var(--font-mono);
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.03em;
   cursor:pointer;
   transition:all var(--normal) var(--ease);
-  box-shadow:var(--shadow-md);
 }
 
 .primary-btn:hover,
 .btn:hover{
-  background:var(--btn-hover);
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-lg);
+  background:var(--gold);
+  color:#151109;
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-md);
 }
 
 .primary-btn:disabled,
 .btn:disabled{
-  opacity:.7;
+  opacity:.6;
   cursor:not-allowed;
   transform:none;
 }
@@ -35,5 +39,16 @@
 }
 
 .primary-btn:hover .arrow{
-  transform:translateX(6px);
+  transform:translateX(5px);
+}
+
+/* filled variant — used for the single strongest call to action */
+.primary-btn.filled{
+  background:var(--gold);
+  color:#151109;
+}
+.primary-btn.filled:hover{
+  background:var(--rust);
+  border-color:var(--rust);
+  color:var(--text-heading);
 }

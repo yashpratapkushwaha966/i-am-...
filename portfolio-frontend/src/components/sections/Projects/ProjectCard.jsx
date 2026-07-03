@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
       className="project-card"
+      data-index={`0${index}`}
       whileHover={{
-        y: -10,
-        scale: 1.02
+        y: -8,
+        rotate: index % 2 === 0 ? -0.6 : 0.6,
       }}
     >
       <h3>{project.title}</h3>

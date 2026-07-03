@@ -7,7 +7,6 @@ const navItems = [
   "About",
   "Skills",
   "Projects",
-  "Experience",
   "Contact",
 ];
 
@@ -71,9 +70,10 @@ const Navbar = () => {
       transition={{ duration: 0.7 }}
       className={`navbar ${scrolled ? "navbar-scroll" : ""}`}
     >
-      <div className="container nav-container">
+      <div className="nav-container">
         <a href="https://www.instagram.com/yash_pratap_kushwaha?igsh=MW5pM3F1cGtsZjdybw==" className="logo">
-          Yash<span>....</span>
+          <span className="logo-mark">YK</span>
+          Yash<span>.dev</span>
         </a>
 
         <ul className="desktop-menu">
@@ -84,9 +84,9 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <button className="hire-btn">
-          Hire Me
-        </button>
+        <a href="#contact" className="hire-btn">
+          Contact Me
+        </a>
 
         <button
           className={`hamburger ${menuOpen ? "active" : ""}`}
@@ -121,13 +121,15 @@ const Navbar = () => {
               </motion.a>
             ))}
 
-            <motion.button
+            <motion.a
+              href="#contact"
               className="hire-btn mobile-btn"
+              onClick={() => setMenuOpen(false)}
               variants={linkVariants}
               whileTap={{ scale: 0.92 }}
             >
-              Hire Me
-            </motion.button>
+              Contact Me
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
