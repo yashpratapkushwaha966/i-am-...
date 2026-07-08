@@ -71,7 +71,7 @@ const Navbar = () => {
       className={`navbar ${scrolled ? "navbar-scroll" : ""}`}
     >
       <div className="nav-container">
-        <a href="https://www.instagram.com/yash_pratap_kushwaha?igsh=MW5pM3F1cGtsZjdybw==" className="logo">
+        <a href="/" className="logo">
           <span className="logo-mark">YK</span>
           Yash<span>.dev</span>
         </a>

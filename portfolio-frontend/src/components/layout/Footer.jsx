@@ -28,7 +28,7 @@ const Footer = () => {
             <FaGithub />
           </motion.a>
 
-          <motion.a href="#" whileHover={{ y: -6, scale: 1.1 }}>
+          <motion.a href="https://www.linkedin.com/in/yash-fsd" target="_blank" rel="noopener noreferrer" whileHover={{ y: -6, scale: 1.1 }}>
             <FaLinkedin />
           </motion.a>
 
