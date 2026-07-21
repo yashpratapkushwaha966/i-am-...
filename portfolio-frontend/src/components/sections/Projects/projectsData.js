@@ -6,7 +6,7 @@ const projects = [
       "A blood donor management platform that helps users quickly find nearby blood donors based on blood group and location, with donor registration and hospital support features.",
     tech: ["React + Node.js + Express + MongoDB"],
     github: "https://github.com/yashpratapkushwaha966/projectbld.git",
-    live: "https://projectbld.vercel.app/ "
+    live: "https://projectbld-swart.vercel.app/ "
   },
 
 
